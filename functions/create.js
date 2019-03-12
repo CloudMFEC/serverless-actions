@@ -36,7 +36,11 @@ module.exports = async ({ TableName, Item }) => {
         if (TableName === keys.CUSTOMER_TABLE)
             Item = { ...Item, customer_id: uuid() };
         else if (TableName === keys.ORDER_TABLE)
-            Item = { ...Item, order_id: uuid() };
+            Item = {
+                ...Item,
+                order_id: uuid(),
+                create_date: new Date().toString()
+            };
         else if (TableName === keys.PRODUCT_TABLE)
             Item = {
                 ...Item,
