@@ -26,11 +26,15 @@ provider:
     - Effect: "Allow"
       Action:
         - "dynamodb:*"
-      Resource: "arn:aws:dynamodb:ap-southeast-1:009988127316:table/*"
+      Resource: "arn:aws:dynamodb:ap-southeast-1:009988127316:table/CustomerTable"
     - Effect: "Allow"
       Action:
         - "dynamodb:*"
-      Resource: "arn:aws:dynamodb:ap-southeast-1:009988127316:table/CustomerTable"
+      Resource: "arn:aws:dynamodb:ap-southeast-1:009988127316:table/OrderTable"
+    - Effect: "Allow"
+      Action:
+        - "dynamodb:*"
+      Resource: "arn:aws:dynamodb:ap-southeast-1:009988127316:table/ProductTable"
 
 functions:
   CreateCustomer:

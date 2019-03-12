@@ -29,11 +29,3 @@ module.exports.onCreateProduct = async (event, context, callback) => {
 
     callback(null, response);
 }
-
-// module.exports.onUpdate = (event, context, callback) => {
-//     funcs.UpdateData();
-// }
-
-// module.exports.onDelete = (event, context, callback) => {
-//     funcs.DeleteData();
-// }
