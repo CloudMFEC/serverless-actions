@@ -8,7 +8,6 @@
 const AWS = require('aws-sdk');
 
 const keys = require('../config/keys');
-const validator = require('validator');
 const isEmpty = require('./isEmpty');
 const uuid = require('uuid');
 
@@ -30,15 +29,6 @@ module.exports = async ({ TableName, Item }) => {
         return response;
 
     }
-    if (TableName === keys.PRODUCT_TABLE && !isEmpty(Item)) {
-        if (!validator.isNumeric(Item.product_pricing)) {
-            // Item is pricing is not number.
-            response.statusCode = 400;
-            response.statusDescription = 'product_pricing must be number.';
-            response.data = null;
-            return response;
-        }
-    }
 
     else {
 
@@ -48,7 +38,11 @@ module.exports = async ({ TableName, Item }) => {
         else if (TableName === keys.ORDER_TABLE)
             Item = { ...Item, order_id: uuid() };
         else if (TableName === keys.PRODUCT_TABLE)
-            Item = { ...Item, product_id: uuid() };
+            Item = {
+                ...Item,
+                product_id: uuid(),
+                product_pricing: parseInt(Item.product_pricing)
+            };
 
         // Must configure credentials and before.
         var dynamodb = new AWS.DynamoDB.DocumentClient({
