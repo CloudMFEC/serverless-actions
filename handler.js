@@ -28,4 +28,4 @@ module.exports.onCreateProduct = async (event, context, callback) => {
         response = await funcs.CreateData({ TableName, Item });
 
     callback(null, response);
-}
+};

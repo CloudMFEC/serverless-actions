@@ -1,4 +1,8 @@
-# Serverless with Node.JS
+# Serverless API Actions with Node.JS
+
+ - Insert
+ - Update
+ - Delete
 
 ## Step 1
 Clone repository.
