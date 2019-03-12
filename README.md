@@ -8,4 +8,9 @@ Clone repository.
 - npm install
 ```
 
-> If you need to change this repository name use `git clone https://github.com/CloudMFEC/serverless-actions.git [YOUR_NAME]`.
+If you need to change this repository name use this below.
+```
+- git clone https://github.com/CloudMFEC/serverless-actions.git [YOUR_NAME]
+- cd [YOUR_NAME]
+- npm install
+```
