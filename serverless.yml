@@ -73,5 +73,41 @@ functions:
             headers:
               Content-Type: "'application/json'"
               Cache-Control: "'max-age=0'"
+  ListCustomer:
+    handler: handler.onListCustomer
+    events:
+      - http:
+          path: list/customer
+          method: get
+          cors: true
+          integration: lambda
+          response:
+            headers:
+              Content-Type: "'application/json'"
+              Cache-Control: "'max-age=0'"
+  ListOrder:
+    handler: handler.onListOrder
+    events:
+      - http:
+          path: list/order
+          method: get
+          cors: true
+          integration: lambda
+          response:
+            headers:
+              Content-Type: "'application/json'"
+              Cache-Control: "'max-age=0'"
+  ListProduct:
+    handler: handler.onListProduct
+    events:
+      - http:
+          path: list/product
+          method: get
+          cors: true
+          integration: lambda
+          response:
+            headers:
+              Content-Type: "'application/json'"
+              Cache-Control: "'max-age=0'"
   
   

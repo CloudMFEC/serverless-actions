@@ -29,3 +29,27 @@ module.exports.onCreateProduct = async (event, context, callback) => {
 
     callback(null, response);
 };
+
+module.exports.onListCustomer = async (event, context, callback) => {
+
+    var TableName = keys.CUSTOMER_TABLE,
+        response = await funcs.ListData({ TableName });
+
+    callback(null, response);
+};
+
+module.exports.onListOrder = async (event, context, callback) => {
+
+    var TableName = keys.ORDER_TABLE,
+        response = await funcs.ListData({ TableName });
+
+    callback(null, response);
+};
+
+module.exports.onListProduct = async (event, context, callback) => {
+
+    var TableName = keys.PRODUCT_TABLE,
+        response = await funcs.ListData({ TableName });
+
+    callback(null, response);
+};
