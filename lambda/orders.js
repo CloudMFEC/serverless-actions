@@ -37,3 +37,12 @@ module.exports.onDeleteOrder = async (event, context, callback) => {
 
     callback(null, response);
 };
+
+module.exports.onUpdateOrder = async (event, context, callback) => {
+
+    var TableName = keys.ORDER_TABLE,
+        Params = { ...event.body },
+        response = await funcs.UpdateData({ TableName, Params });
+
+    callback(null, response);
+};

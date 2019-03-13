@@ -22,3 +22,6 @@ module.exports.onDeleteOrder = (event, context, callback) => Lambda.Orders.onDel
 module.exports.onDeleteProduct = (event, context, callback) => Lambda.Products.onDeleteProduct(event, context, callback);
 
 // Lambda for update data.
+module.exports.onUpdateCustomer = (event, context, callback) => Lambda.Customers.onUpdateCustomer(event, context, callback);
+module.exports.onUpdateOrder = (event, context, callback) => Lambda.Orders.onUpdateOrder(event, context, callback);
+module.exports.onUpdateProduct = (event, context, callback) => Lambda.Products.onUpdateProduct(event, context, callback);

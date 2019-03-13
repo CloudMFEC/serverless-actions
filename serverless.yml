@@ -181,4 +181,40 @@ functions:
             headers:
               Content-Type: "'application/json'"
               Cache-Control: "'max-age=0'"
+  UpdateCustomer:
+    handler: handler.onUpdateCustomer
+    events:
+      - http:
+          path: update/customer
+          method: post
+          cors: true
+          integration: lambda
+          response:
+            headers:
+              Content-Type: "'application/json'"
+              Cache-Control: "'max-age=0'"
+  UpdateOrder:
+    handler: handler.onUpdateOrder
+    events:
+      - http:
+          path: update/order
+          method: post
+          cors: true
+          integration: lambda
+          response:
+            headers:
+              Content-Type: "'application/json'"
+              Cache-Control: "'max-age=0'"
+  UpdateProduct:
+    handler: handler.onUpdateProduct
+    events:
+      - http:
+          path: update/product
+          method: post
+          cors: true
+          integration: lambda
+          response:
+            headers:
+              Content-Type: "'application/json'"
+              Cache-Control: "'max-age=0'"
   

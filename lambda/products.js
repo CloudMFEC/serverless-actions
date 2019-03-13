@@ -37,3 +37,12 @@ module.exports.onDeleteProduct = async (event, context, callback) => {
 
     callback(null, response);
 };
+
+module.exports.onUpdateProduct = async (event, context, callback) => {
+
+    var TableName = keys.PRODUCT_TABLE,
+        Params = { ...event.body },
+        response = await funcs.UpdateData({ TableName, Params });
+
+    callback(null, response);
+};
