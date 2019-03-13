@@ -1,20 +1,32 @@
 /**
- * This lambda is for list data from Amazon DynamoDB.
- * @method GET
+ * This lambda is for get data from Amazon DynamoDB.
+ * @method POST
  * @param {String} TableName
+ * @param {Object} Key
  */
 
 const AWS = require('aws-sdk');
 
 const keys = require('../config/keys');
+const isEmpty = require('../functions/isEmpty');
 
-module.exports = async ({ TableName }) => {
+module.exports = async ({ TableName, Key }) => {
     // Initialize response data.
     var response = {
         statusCode: 0,
         statusDescription: '',
-        data: null
+        data: null,
     };
+
+    if (isEmpty(Key)) {
+
+        // Key is empty.
+        response.statusCode = 400;
+        response.statusDescription = 'Key is required.';
+        response.data = null;
+        return response;
+
+    }
 
     // Must configure credentials and before.
     var dynamodb = new AWS.DynamoDB.DocumentClient({
@@ -22,10 +34,10 @@ module.exports = async ({ TableName }) => {
     });
 
     // Configuration parameters is required.
-    const params = { TableName };
+    const params = { TableName, Key };
 
     return new Promise(resolve => {
-        dynamodb.scan(params, (err, data) => {
+        dynamodb.get(params, (err, data) => {
             if (err) {
                 // If error.
                 response.statusCode = err.statusCode;

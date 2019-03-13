@@ -19,3 +19,12 @@ module.exports.onListProduct = async (event, context, callback) => {
 
     callback(null, response);
 };
+
+module.exports.onGetProduct = async (event, context, callback) => {
+
+    var TableName = keys.PRODUCT_TABLE,
+        Key = { ...event.body },
+        response = await funcs.GetData({ TableName, Key });
+
+    callback(null, response);
+};

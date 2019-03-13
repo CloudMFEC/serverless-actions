@@ -19,3 +19,12 @@ module.exports.onListOrder = async (event, context, callback) => {
 
     callback(null, response);
 };
+
+module.exports.onGetOrder = async (event, context, callback) => {
+
+    var TableName = keys.ORDER_TABLE,
+        Key = { ...event.body },
+        response = await funcs.GetData({ TableName, Key });
+
+    callback(null, response);
+};
