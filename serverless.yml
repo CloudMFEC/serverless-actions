@@ -145,5 +145,17 @@ functions:
             headers:
               Content-Type: "'application/json'"
               Cache-Control: "'max-age=0'"
+  DeleteCustomer:
+    handler: handler.onDeleteCustomer
+    events:
+      - http:
+          path: delete/customer
+          method: post
+          cors: true
+          integration: lambda
+          response:
+            headers:
+              Content-Type: "'application/json'"
+              Cache-Control: "'max-age=0'"
   
   

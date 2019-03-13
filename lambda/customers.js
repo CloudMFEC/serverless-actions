@@ -28,3 +28,12 @@ module.exports.onGetCustomer = async (event, context, callback) => {
 
     callback(null, response);
 };
+
+module.exports.onDeleteCustomer = async (event, context, callback) => {
+
+    var TableName = keys.CUSTOMER_TABLE,
+        Key = { ...event.body },
+        response = await funcs.DeleteData({ TableName, Key });
+
+    callback(null, response);
+};

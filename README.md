@@ -3,6 +3,8 @@
  - Insert
  - Update
  - Delete
+ - List
+ - Get
 
 ## Step 1
 Clone repository.
