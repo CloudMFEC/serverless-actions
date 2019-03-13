@@ -1,55 +1,20 @@
 'use strict';
+const Lambda = require('./lambda');
 
-const funcs = require('./functions');
-const keys = require('./config/keys');
+// Lambda for create customer.
+module.exports.onCreateCustomer = (event, context, callback) => Lambda.Customers.onCreateCustomer(event, context, callback);
 
-module.exports.onCreateCustomer = async (event, context, callback) => {
+// Lambda for list all customers.
+module.exports.onListCustomer = (event, context, callback) => Lambda.Customers.onListCustomer(event, context, callback);
 
-    var TableName = keys.CUSTOMER_TABLE,
-        Item = { ...event.body },
-        response = await funcs.CreateData({ TableName, Item });
+// Lambda for create order.
+module.exports.onCreateOrder = (event, context, callback) => Lambda.Orders.onCreateOrder(event, context, callback);
 
-    callback(null, response);
-};
+// Lambda for list all orders.
+module.exports.onListOrder = (event, context, callback) => Lambda.Orders.onListOrder(event, context, callback);
 
-module.exports.onCreateOrder = async (event, context, callback) => {
+// Lambda for create product.
+module.exports.onCreateProduct = (event, context, callback) => Lambda.Products.onCreateProduct(event, context, callback);
 
-    var TableName = keys.ORDER_TABLE,
-        Item = { ...event.body },
-        response = await funcs.CreateData({ TableName, Item });
-
-    callback(null, response);
-};
-
-module.exports.onCreateProduct = async (event, context, callback) => {
-
-    var TableName = keys.PRODUCT_TABLE,
-        Item = { ...event.body },
-        response = await funcs.CreateData({ TableName, Item });
-
-    callback(null, response);
-};
-
-module.exports.onListCustomer = async (event, context, callback) => {
-
-    var TableName = keys.CUSTOMER_TABLE,
-        response = await funcs.ListData({ TableName });
-
-    callback(null, response);
-};
-
-module.exports.onListOrder = async (event, context, callback) => {
-
-    var TableName = keys.ORDER_TABLE,
-        response = await funcs.ListData({ TableName });
-
-    callback(null, response);
-};
-
-module.exports.onListProduct = async (event, context, callback) => {
-
-    var TableName = keys.PRODUCT_TABLE,
-        response = await funcs.ListData({ TableName });
-
-    callback(null, response);
-};
+// Lambda for list all products.
+module.exports.onListProduct = (event, context, callback) => Lambda.Products.onListProduct(event, context, callback);
