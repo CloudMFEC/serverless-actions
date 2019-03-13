@@ -28,3 +28,12 @@ module.exports.onGetProduct = async (event, context, callback) => {
 
     callback(null, response);
 };
+
+module.exports.onDeleteProduct = async (event, context, callback) => {
+
+    var TableName = keys.PRODUCT_TABLE,
+        Key = { ...event.body },
+        response = await funcs.DeleteData({ TableName, Key });
+
+    callback(null, response);
+};

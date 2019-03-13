@@ -157,5 +157,28 @@ functions:
             headers:
               Content-Type: "'application/json'"
               Cache-Control: "'max-age=0'"
-  
+  DeleteOrder:
+    handler: handler.onDeleteOrder
+    events:
+      - http:
+          path: delete/order
+          method: post
+          cors: true
+          integration: lambda
+          response:
+            headers:
+              Content-Type: "'application/json'"
+              Cache-Control: "'max-age=0'"
+  DeleteProduct:
+    handler: handler.onDeleteProduct
+    events:
+      - http:
+          path: delete/product
+          method: post
+          cors: true
+          integration: lambda
+          response:
+            headers:
+              Content-Type: "'application/json'"
+              Cache-Control: "'max-age=0'"
   
