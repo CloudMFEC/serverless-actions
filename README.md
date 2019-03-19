@@ -8,7 +8,7 @@ AWS Lambda functions with Amazon DynamoDB.
  - Get
 
 ## Step 1
-Clone repository and install dependencies `npm install` or short key `npm i`.
+Clone repository and install all dependencies `npm install` or short key `npm i`.
 ```
 - git clone https://github.com/CloudMFEC/serverless-actions.git
 - cd serverless-actions
