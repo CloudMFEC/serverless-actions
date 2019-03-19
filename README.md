@@ -1,5 +1,6 @@
 # Serverless API Actions with Node.JS
-
+AWS Lambda functions with Amazon DynamoDB.
+`Client <-> API <-> Lambda <-> DynamoDB`.
  - Insert
  - Update
  - Delete
