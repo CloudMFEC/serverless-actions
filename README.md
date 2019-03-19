@@ -22,7 +22,8 @@ If you need to change repository's name just use this below.
 ```
 
 ## Step 2
-Deploy this code to cloud provider (this configuration for aws).
+Deploy this code to cloud provider (this configuration inf `serverless.yml` for aws).
+Use `serverless deploy` or short key `sls deploy` in root directory.
 ```
 - serverless deploy
 ```
