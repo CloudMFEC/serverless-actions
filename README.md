@@ -1,6 +1,6 @@
 # Serverless API Actions with Node.JS
 AWS Lambda functions with Amazon DynamoDB.
-> Client <-> API <-> Lambda <-> DynamoDB.
+> Client <--> API <--> Lambda <--> DynamoDB.
  - Insert
  - Update
  - Delete
@@ -12,14 +12,14 @@ Clone repository.
 ```
 - git clone https://github.com/CloudMFEC/serverless-actions.git
 - cd serverless-actions
-- npm install
+- npm install or npm i
 ```
 
 If you need to change repository's name just use this below.
 ```
 - git clone https://github.com/CloudMFEC/serverless-actions.git [YOUR_NAME]
 - cd [YOUR_NAME]
-- npm install
+- npm install or npm i
 ```
 
 ## Step 2
